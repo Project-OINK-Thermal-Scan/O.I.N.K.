@@ -1,0 +1,13 @@
+# Large dataset payload — not suitable for git (GitHub blocks files >100 MB).
+# Keep the tooling/docs, exclude the data itself.
+datasets/datasetpig/
+datasets/kaggle_upload/
+datasets/*.zip
+datasets/TIRpigear-23189*/
+.datasets.tmp/
+
+# OS / editor cruft
+.DS_Store
+*.swp
+__pycache__/
+*.pyc

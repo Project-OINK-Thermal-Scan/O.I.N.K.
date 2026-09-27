@@ -1,0 +1,14 @@
+# Cloud-ready copy of data.yaml.
+# Set `path:` to the mounted dataset root on the cloud box, then use this as
+# the `data=` argument to ultralytics.
+#
+#   Kaggle : /kaggle/input/tirpigear-yolo/datasetpig
+#   Colab  : /content/data/datasetpig
+
+path: /kaggle/input/tirpigear-yolo/datasetpig
+train: images/train
+val: images/val
+test: images/test
+nc: 1
+names:
+  0: ear
