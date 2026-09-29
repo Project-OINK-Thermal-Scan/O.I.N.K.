@@ -9,6 +9,33 @@ We welcome feedback and corrections from all experts and will continue to update
 
 欢迎各位老师批评指正，后续我们将会继续更新、完善和共享相关数据。
 
+# YOLO dataset download (this repository)
+
+A ready-to-train **YOLO-format** copy of TIRPigEar-23189 — 23,189 thermal-infrared
+images (23,189 JPEG + 23,189 label `.txt`), split into train / val / test — is
+published as a GitHub release:
+
+**https://github.com/Project-OINK-Thermal-Scan/O.I.N.K./releases/tag/dataset-v1**
+
+The archive is 4.97 GB, so it ships as three parts (GitHub caps release assets at
+2 GB each). Allow **~10 GB free**: ~5 GB for the parts plus ~5 GB once extracted
+(23,189 JPEGs + labels). Download all three, then reassemble and verify in one
+chained command:
+
+```bash
+cat TIRpigear-23189-yolo.zip.part00 \
+    TIRpigear-23189-yolo.zip.part01 \
+    TIRpigear-23189-yolo.zip.part02 > TIRpigear-23189-yolo.zip \
+  && sha256sum -c <<<'c40cadcf2c64e3ca68db3b270ca3844b748ff2127735108914aed6617b659cc9  TIRpigear-23189-yolo.zip' \
+  && unzip TIRpigear-23189-yolo.zip
+```
+
+Parts are named explicitly rather than with a `*` glob, and the `&&` chain stops
+before `unzip` if a part is missing or the checksum does not match.
+
+Alternatively, `datasets/download.sh` pulls the upstream TIRPigEar archives
+directly from HuggingFace, with resume and checksum verification.
+
 # Data Download
 You can download all the TIRPigEar datasets through the Link: https://pan.baidu.com/s/10tN6ynZDTucLuZ2MZtdAOg?pwd=TIRP   or  https://drive.google.com/file/d/1HLtYgwD7vOBE1a1OUFTVbLUPU2kIG5dW/view?usp=sharing
 
