@@ -11,3 +11,7 @@ datasets/TIRpigear-23189*/
 *.swp
 __pycache__/
 *.pyc
+
+# PlatformIO build artifacts
+.pio/
+.pioenvs/
